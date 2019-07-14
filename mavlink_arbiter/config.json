@@ -1,0 +1,23 @@
+{
+  "FDG_CLIENT": {
+    "host": "http://0.0.0.0",
+    "port": "8080",
+    "username": "admin",
+    "password": "password"
+  },
+
+  "MAVL_INCOMING": {
+    "host": "127.0.0.1",
+    "port": "14550"
+  },
+
+  "MAVL_OUTGOING" : {
+    "host": "127.0.0.1",
+    "port": "14551"
+  },
+
+  "MAVL_HTTP_DISPLAY" : {
+    "host": "127.0.0.1",
+    "port": 5042
+  }
+}
