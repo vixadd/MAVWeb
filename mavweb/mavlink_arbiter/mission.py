@@ -14,10 +14,10 @@ import _thread as thread
 from multiprocessing import Queue, Process
 from google.protobuf import json_format
 
-from fdg.mavlink_arbiter.utils import Utils
-from fdg.proto import dumbo_pb2
-from fdg.mavlink_arbiter import http_handeler
-from fdg.client.fdg_client import Client
+from mavlink_arbiter.utils import Utils
+# from proto import dumbo_pb2
+from mavlink_arbiter import http_handeler
+# from client.fdg_client import Client
 
 
 class Mission( object ):
@@ -48,11 +48,11 @@ class Mission( object ):
         """
 
         HTTPConst = http_handeler.HTTPConstants()
-        client = Client(
-            url="http://localhost:8080",
-            username="admin",
-            password="password",
-        )
+        # client = Client(
+        #     url="http://localhost:8080",
+        #     username="admin",
+        #     password="password",
+        # )
 
         # HTTP Constants and REST Static API handelling.
         try:
@@ -64,11 +64,11 @@ class Mission( object ):
                     if not (self.telemetry_buffer.empty()):
                         gps = self.telemetry_buffer.get()
                         HTTPConst.set_telemetry(gps)
-                        client.post_gps_update(
-                            longitude=gps['telemetry']['longitude'],
-                            latitude=gps['telemetry']['latitude'],
-                            heading=gps['heading']
-                        )
+                        # client.post_gps_update(
+                        #     longitude=gps['telemetry']['longitude'],
+                        #     latitude=gps['telemetry']['latitude'],
+                        #     heading=gps['heading']
+                        # )
 
                 except KeyboardInterrupt:
                     self.util.errLog("Executing keyboard interrupt program: TERMINATE")
@@ -93,13 +93,14 @@ class Mission( object ):
         response: GPSPosition
             Return the GPS position object that is pushed to the buffer.
         """
-        gps_position = dumbo_pb2.GPSPosition( )
-
-        gps_position.telemetry.longitude = lon
-        gps_position.telemetry.latitude  = lat
-        gps_position.heading             = float( hdg )
-
-        self.telemetry_buffer.put( json_format.MessageToDict( gps_position ) )
+        # gps_position = dumbo_pb2.GPSPosition( )
+        #
+        # gps_position.telemetry.longitude = lon
+        # gps_position.telemetry.latitude  = lat
+        # gps_position.heading             = float( hdg )
+        #
+        # self.telemetry_buffer.put( json_format.MessageToDict( gps_position ) )
+        pass
 
     def __del__(self):
         """

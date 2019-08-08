@@ -12,7 +12,7 @@
 #                                                           #
 # ===========================================================#
 
-from fdg.mavlink_arbiter.utils import Utils, CommandMavlink, ModeMavlink
+from mavlink_arbiter.utils import Utils, CommandMavlink, ModeMavlink
 
 from pymavlink import mavutil
 from pymavlink import mavwp

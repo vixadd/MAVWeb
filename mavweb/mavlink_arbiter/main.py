@@ -14,10 +14,10 @@ import json
 
 from multiprocessing import Process, Queue
 
-from fdg.mavlink_arbiter.utils import Utils
-from fdg.mavlink_arbiter.mav import Mavlink
-from fdg.mavlink_arbiter.mission import Mission
-from fdg.mavlink_arbiter.singleton import singleton
+from mavlink_arbiter.utils import Utils
+from mavlink_arbiter.mav import Mavlink
+from mavlink_arbiter.mission import Mission
+from mavlink_arbiter.singleton import singleton
 
 MAVL_INCOMING = "MAVL_INCOMING"
 MAVL_OUTGOING = "MAVL_OUTGOING"
@@ -43,7 +43,7 @@ class Main(object):
 
         except IOError:
             self.util.errLog("WARNING: Config file not found!")
-            self.util.errLog("Aborting operation! Make sure config.json exists in the /src directory.")
+            self.util.errLog("Aborting operation! Make sure config.json exists in the arbiter directory.")
             sys.exit(0)
 
         # Instantiate the mavlink retriever module.

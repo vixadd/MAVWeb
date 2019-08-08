@@ -1,5 +1,5 @@
 #!/bin/python3
-from fdg.mavlink_arbiter.singleton import singleton
+from mavlink_arbiter.singleton import singleton
 import queue
 
 

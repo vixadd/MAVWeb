@@ -12,7 +12,7 @@
 import flask
 import requests
 
-from fdg.mavlink_arbiter.singleton import singleton
+from mavlink_arbiter.singleton import singleton
 from flask import request, jsonify
 
 
