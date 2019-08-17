@@ -1,0 +1,26 @@
+
+syntax = 'proto3';
+
+
+message mavlink_GPS_RAW_INT {
+    uint64 time_usec = 1;
+    uint8  fix_type  = 2;
+
+    int32  lat       = 3;
+    int32  lon       = 4;
+    int32  alt       = 5;
+    int16  eph       = 6;
+    int16  epv       = 7;
+    int16  vel       = 8;
+    int16  cog       = 9;
+
+    uint8  satellites_available = 10;
+}
+
+message GPS_STATUS {
+    uint8 satellites_visible = 1;
+    repeated uint8 satellite_prn = 2;
+    repeated uint8 satellite_used = 3;
+    repeated uint8 satellite_elevation = 4;
+
+}
